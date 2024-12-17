@@ -1,0 +1,166 @@
+body{
+    background-color: lightblue;
+    font-family: helvetica;
+}
+
+.centro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.caixa{
+    background-color: white;
+    text-align: left;
+    border-radius: 30px;
+    width: 40%;
+    box-shadow: 10px 5px 5px gray;
+    min-height: 150px;
+    margin-top: 5%;
+    padding: 20px;
+    margin-bottom: 5%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+    margin-left: 3%;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 100px;
+    width: 90%;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-left: 2%;
+    cursor: pointer;
+}
+
+input:hover{
+    transform: scale(1.1);
+    background-color: whitesmoke;
+}
+
+input:not(:placeholder-shown), input[type="date"]:not(:empty):valid{
+    background-color: whitesmoke;
+}
+
+input:focus{
+    background-color: whitesmoke;
+    outline: none;
+    border: 1px solid #888;
+}
+
+h1{
+    text-align: center;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    align-self: center;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Adiciona transição suave */
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.1); /* Aumenta ligeiramente o botão */
+}
+
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 60px; /* Largura retraída */
+    background-color: whitesmoke;
+    color: white;
+    transition: width 0.3s ease;
+    overflow: hidden; /* Oculta o conteúdo interno */
+}
+
+.sidebar:hover {
+    width: 200px; /* Largura expandida */
+}
+
+/* Conteúdo Interno da Sidebar */
+.sidebar ul {
+    list-style: none;
+    padding: 20px 0;
+    margin: 0;
+    opacity: 0; /* Torna o conteúdo invisível */
+    transition: opacity 0.3s ease; /* Animação suave */
+}
+
+.sidebar:hover ul {
+    opacity: 1; /* Torna o conteúdo visível ao expandir */
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li p {
+    color: black;
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.2s ease;
+}
+
+.sidebar ul li a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.2s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #555;
+}
+
+
+/* Sidebar Toggle */
+.sidebar .sidebar-toggle {
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    width: 20px;
+    height: 40px;
+    background-color: whitesmoke;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+/* Conteúdo Principal */
+main {
+    margin-left: 60px; /* Espaço inicial com a sidebar retraída */
+    padding: 20px;
+    flex: 1;
+    transition: margin-left 0.3s ease;
+}
+
+.sidebar:hover ~ main {
+    margin-left: 200px; /* Ajusta o conteúdo ao expandir a sidebar */
+}
+
